@@ -60,10 +60,14 @@ tr.month {
 .description {
    font-size:9px;
    color: black;
-   text-align: justify;
-   
+   text-align: left;
+   padding-top: 15px;
 }
-p {
+
+.description ul {
+   line-height: 1.2;   
+}
+.description p {
    line-height: 1.2;
 }
 
