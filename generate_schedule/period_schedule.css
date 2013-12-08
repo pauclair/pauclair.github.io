@@ -1,0 +1,111 @@
+<style type="text/css">
+   div#legend {
+      position: fixed;
+      top: 0;
+      left: 10;
+      padding: 6px;
+      width: 120px;
+      height: 100px;
+      font-size: 12px;
+      text-align: center;
+   }
+
+   .legend {
+      padding: 6px;
+   }
+
+   .blue {
+      background-color: #C1D2E3;
+   }
+   .green {
+      background-color: #CEE3C1;
+   }
+   .yellow {
+      background-color: #F7F7C1;
+   }
+   .orange {
+      background-color: #F2D4AA;
+   }
+   .red {
+      background-color: #FF8C8C;
+   }
+
+   td {
+      text-align: center;
+   }
+
+   th.month {
+      font-size: 18px;
+      color: #333333;
+   }
+
+   .year {
+      color: #333333;
+      font-size: 64px;
+      vertical-align: text-top;
+      height: 120px;
+   }
+   .sat {
+      color: #a21717;
+      width: 25px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+   }
+   .sun {
+      width: 25px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+   }
+   .mon {
+      width: 25px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+   }
+   .tue {
+      width: 25px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+   }
+   .wed {
+      width: 25px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+   }
+   .thu {
+      width: 25px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+   }
+   .fri {
+      width: 25px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+   }
+
+   .month {
+      width: 195px;
+      font-size: 12px;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      margin-left: 10px;
+      margin-right: 10px;
+   }
+
+   tbody.month {
+      border-style: solid;
+      background-color: yellow;
+      border-color: green;
+   }
+
+   .booked {
+      background-color: #a21717;
+      color: white;
+   }
+</style>
