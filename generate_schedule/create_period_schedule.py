@@ -123,7 +123,7 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       """
       v = []
       a = v.append
-      a('<div class="large-3 medium-3 small-3 columns">\n')
+      a('<div class="large-3 medium-3 small-12 columns">\n')
       a('<table border="0" cellpadding="0" cellspacing="0" class="month">')
       a('\n')
       a(self.formatmonthname(theyear, themonth, withyear=withyear))
@@ -186,7 +186,7 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       a('<body>\n')
       a('<div id="planning">\n')
       a('<div class="row">\n')
-      a('  <div class="large-12 columns">\n')
+      a('  <div class="large-12 medium-12 small-12 columns">\n')
       a('     <h1 class="text-center">Tarifs %d</h1>\n' %theyear)
       a('  </div>\n')
       a('</div>\n')
