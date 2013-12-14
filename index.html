@@ -322,7 +322,7 @@
             <ul>
                <li>Vaisselle prévue pour 5 personnes</li>
    				<li>Chauffage au sol et chauffe-Eau Electrique</li>
-   				<li>Possibilité de louer le <a href="" onclick="return showElementWithId('linge');">linge de maison</a></li>
+   				<li>Possibilité de louer le <a href="#" data-reveal-id="linge">linge de maison</a></li>
    				<li>Maison non fumeur</li>
                <li>Animaux non admis</li>
             </ul>
@@ -330,10 +330,28 @@
          </div>
       </div>
 
+      <div id="linge" class="reveal-modal panel callout" data-reveal>
+         <h1>
+      	   Location Linge
+      	</h1>
+         <p>Pour un séjour tranquille sur l’Ile De Ré et vous libérer des contraintes liées au manque de place dans vos valises, nous vous proposons un service de location de linge.</p>
+         <ul>
+            <li>
+            Pack lit 1 personne 16€ (1 housse de couette - 1 drap housse - 1 taie) le lit fait à votre arrivée avec 2 serviettes de toilette
+            </li>
+            <li>
+            Pack lit 2 personnes 26€ (1 housse de couette - 1 drap housse - 2 taies) le lit fait à votre arrivée avec 4 serviettes de toilette
+            </li>
+         </ul>
+         <p>Fourniture du linge de maison inclus (sur réservation d’un pack uniquement) 2 essuies verres pour la cuisine et un tapis de bain par salle de bain.</p>
+         <a class="close-reveal-modal">&#215;</a>
+      </div>
+      
 <!-- body content here -->
       <script src="js/vendor/jquery.js" type="text/javascript"></script>
       <script src="js/foundation.min.js" type="text/javascript"></script>
       <script src="js/foundation-datepicker.js" type="text/javascript"></script>
+      
       <script>
        $(function() {
          var nowTemp = new Date();

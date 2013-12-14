@@ -14,9 +14,11 @@
    background-color: #FF8C8C;
 }
 
-/*td {
+#linge.panel.callout {
+   border-color: #FFFBBA;
+   background: #FFFBBA;
 }
-*/
+
 table tr th,
 table tr td {
    font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;;
@@ -30,11 +32,6 @@ table tr td {
    font-size: 12px;
    color: #333333;
 }
-
-/*li.active {
-   margin-left:25%;
-}
-*/
 
 .description {
    font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;;
@@ -77,8 +74,7 @@ a.button.postfix {
 .orbit-container .orbit-slides-container img {
   display: block;
   max-width: 100%; 
-/*  margin-left: 14px;
-*/}
+}
 
 .orbit-container .orbit-slides-container img.portrait {
   margin-left: 25%;
@@ -110,7 +106,6 @@ a.button.postfix {
    padding: 5px 5px 5px 5px;
 }
 #request {
-/*   background-color:lightgrey;*/
    font-family:"Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
    border-color:rgba(162,23,23,1.00);
    border-bottom-width:5px;
