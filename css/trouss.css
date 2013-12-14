@@ -31,6 +31,11 @@ table tr td {
    color: #333333;
 }
 
+/*li.active {
+   margin-left:25%;
+}
+*/
+
 .description {
    font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;;
    font-size:9px;
@@ -72,7 +77,12 @@ a.button.postfix {
 .orbit-container .orbit-slides-container img {
   display: block;
   max-width: 100%; 
-  margin-left:14px;
+/*  margin-left: 14px;
+*/}
+
+.orbit-container .orbit-slides-container img.portrait {
+  margin-left: 25%;
+  height:auto;
 }
 
 .orbit-container .orbit-timer {
@@ -87,8 +97,6 @@ a.button.postfix {
   bottom: 0;
   background-color: rgba(51, 51, 51, 0.8);
   color: white;
-  margin-left:14px;
-  width:600px;
   font-size: 0.875rem; 
 }
 
