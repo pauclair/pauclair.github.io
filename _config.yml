@@ -2,4 +2,6 @@ safe: true
 lsi: false
 pygments: true
 source: ./src
+destination: ./
+exclude: generate_schedule
 
