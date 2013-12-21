@@ -123,7 +123,7 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       """
       v = []
       a = v.append
-      a('<div class="large-3 medium-3 small-12 columns small-centered">\n')
+      a('<div class="large-3 medium-3 small-12 columns">\n')
       a('<table border="0" cellpadding="0" cellspacing="0" class="month">')
       a('\n')
       a(self.formatmonthname(theyear, themonth, withyear=withyear))
