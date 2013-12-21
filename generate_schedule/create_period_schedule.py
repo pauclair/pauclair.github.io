@@ -221,5 +221,5 @@ locale.setlocale(locale.LC_ALL, 'fr_FR')
 myCal = TroussCalendar (calendar.SATURDAY, locale.getlocale())
 
 schedule = myCal.formatyearpage(year, 4, 'utf-8', "legend.html")
-codecs.open("../tarifs.html", 'w', encoding='utf-8').write(schedule)
+codecs.open("../src/tarifs.html", 'w', encoding='utf-8').write(schedule)
 locale.setlocale(locale.LC_ALL, currentloc)
