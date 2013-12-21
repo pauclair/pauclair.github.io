@@ -19,6 +19,17 @@
    background: #FFFBBA;
 }
 
+div.deepred {
+   background-color:rgba(162,23,23,1.00);
+   margin-top:5px;
+   margin-bottom:5px;
+   border-bottom-width:5px;
+   border-top-width:5px;
+   border-left-width:5px;
+   border-right-width:5px;
+   padding: 5px 5px 5px 5px;
+} 
+
 table tr th,
 table tr td {
    font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;;

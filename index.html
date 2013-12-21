@@ -15,11 +15,15 @@
       <link rel="stylesheet" href="css/trouss.css">
    </head>
    <body>
+      <div class="row deepred">
+      </div>   
       <div class="row">
         <div class="large-12 medium-12 small-12 columns">
            <img src="./img/plage.jpg" alt"Plage de la Conche">
         </div>
       </div>
+      <div class="row deepred">
+      </div>   
       <div class="row">
          <div class="large-6 medium-6 small-12 columns">
             <h3 class="text-left">
@@ -210,7 +214,8 @@
             </ul>
          </div>
          <div class="large-4 medium-4 small-12 columns" id="request">
-            <form>
+            <form data-abide id="requestForm" action="http://getsimpleform.com/messages?form_api_token=92124a7d42568e93177b63dbd55ac110" method="post" enctype="multipart/form-data">
+               <!-- <input type='hidden' name='redirect_to' value='http://localhost:4000/index.html#thankyou'/> -->
               <fieldset>
                 <legend>Demande de renseignements</legend>
                   <div class="row">
@@ -218,7 +223,8 @@
                         <label for="right-label" class="right inline">Nom</label>
                      </div>
                      <div class="large-8 medium-8 small-8 columns">
-                        <input type="text" id="name" placeholder="Obligatoire">
+                        <input type="text" required pattern="alpha" name="name" placeholder="Obligatoire">
+                        <small class="error">Votre nom doit être une chaine de charactères.</small>
                      </div>
                   </div>
                   <div class="row">
@@ -226,7 +232,8 @@
                         <label for="right-label" class="right inline">email</label>
                      </div>
                      <div class="large-8 medium-8 small-8 columns">
-                        <input type="email" id="email" placeholder="Obligatoire">
+                        <input type="email" required pattern="email" name="email" placeholder="Obligatoire">
+                        <small class="error">Format invalide</small>
                      </div>                      
                   </div>
                   <div class="row">
@@ -234,7 +241,8 @@
                         <label for="right-label" class="right inline">Arrivée le :</label>
                      </div>
                      <div class="large-8 medium-8 small-8 columns">
-                        <input type="text" id="startDate" data-date-format="dd/mm/yy" placeholder="Obligatoire">
+                        <input type="text" required name="startDate"  id="startDate" data-date-format="dd/mm/yy" placeholder="Obligatoire">
+                        <small class="error">Merci de spécifier votre date d'arrivée souhaitée'</small>
                      </div>
                   </div>
                   <div class="row">
@@ -242,7 +250,8 @@
                         <label for="right-label" class="right inline">Départ le :</label>
                      </div>
                      <div class="large-8 medium-8 small-8 columns">
-                        <input type="text" id="stopDate" data-date-format="dd/mm/yy" placeholder="Obligatoire">
+                        <input type="text" required name="stopDate" id="stopDate" data-date-format="dd/mm/yy" placeholder="Obligatoire">
+                        <small class="error">Merci de spécifier la date souhaitée de fin de votre séjour'</small>
                      </div>
                   </div>
                   <div class="row">
@@ -250,16 +259,23 @@
                         <label for="right-label" class="right inline">Commentaire</label>
                      </div>
                      <div class="large-8 medium-8 small-8 columns">
-                        <input type="text" id="comment">
+                        <input type="text" name="comment">
+                        <input type="hidden" name="_spam" value="message" type='text' />
                      </div>
                   </div>
                   <div class="row">
                      <div class="large-6 medium-6 small-12 columns">
                      </div>   
                      <div class="large-6 medium-6 small-12 columns">
-                        <a href="#" class="button postfix">Envoyer</a>
+                        <a id="submitButton" href="#" class="button postfix">Envoyer</a>
+                        <!-- <input type='submit' class="button postfix" value='Envoyer' /> -->
+                        <div id="thankyouMessage" data-alert class="alert-box success" style="display: none;">
+                           Merci, votre message a bien été envoyé.
+                            <a class="close" href="#">×</a>
+                        </div>
+                        <div class="progress round" id="progress" style="display: none;"></div>
                      </div>   
-                  </div>
+                  </div>                  
                   <div class="row" style="margin-top: 45px;">
                     <div class="large-4 medium-4 small-12 columns">
                        <a href="#" class="button postfix">Planning</a>
@@ -393,7 +409,18 @@
          }).data('datepicker');
        });
        </script>
-      
+       <script>
+       $(function() {
+          var submitButton = $('#submitButton');
+          var alertBox = $('#thankyouMessage');                 
+          
+          $(submitButton).click(function() { 
+             var form = $('#requestForm');
+             $(form).submit();             
+             $(alertBox).style="display: block;";                 
+          });
+       });
+       </script>
       <script type="text/javascript">
          // $(document).foundation();
          $(document).foundation();

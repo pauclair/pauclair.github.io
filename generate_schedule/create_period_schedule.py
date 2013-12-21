@@ -123,7 +123,7 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       """
       v = []
       a = v.append
-      a('<div class="large-3 medium-3 small-12 columns">\n')
+      a('<div class="large-3 medium-3 small-12 columns small-centered">\n')
       a('<table border="0" cellpadding="0" cellspacing="0" class="month">')
       a('\n')
       a(self.formatmonthname(theyear, themonth, withyear=withyear))
@@ -185,6 +185,9 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       a('</head>\n')
       a('<body>\n')
       a('<div id="planning">\n')
+      a('<div class="row deepred">\n')
+      a('</div>\n')   
+      
       a('<div class="row">\n')
       a('  <div class="large-12 medium-12 small-12 columns">\n')
       a('     <h1 class="text-center">Tarifs %d</h1>\n' %theyear)
@@ -194,11 +197,16 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
          a(self.addLegend(legend))
 
       a(self.formatyear(theyear, width))
+      a('<div class="row deepred">\n')
+      a('</div>\n')   
+      
       a('</div>\n')
       a('<div class="row">\n')
-      a('  <div class="large-3 columns">\n')
+      a('  <div class="large-3 small-10 columns">\n')
       a('     <a href="./index.html" class="button postfix">Retour</a>\n')
       a('  </div>\n')
+      a('</div>\n')
+      a('<div class="row">\n')
       a('  <div class="large-3 columns">\n')
       a('     <a href="#" class="button postfix">Planning</a>\n')
       a('  </div>\n')
