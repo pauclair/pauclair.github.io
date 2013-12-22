@@ -19,6 +19,11 @@
    background: #FFFBBA;
 }
 
+.booked {
+	background-color:rgba(162,23,23,1.00);
+	color:white;
+}
+
 div.deepred {
    background-color:rgba(162,23,23,1.00);
    margin-top:5px;
