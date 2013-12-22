@@ -2,5 +2,5 @@ safe: true
 lsi: false
 pygments: true
 source: ./
-exclude: generate_schedule
+exclude: generate_schedule, schedule.html
 

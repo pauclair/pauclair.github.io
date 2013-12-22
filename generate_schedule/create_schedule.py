@@ -22,8 +22,6 @@ try:
    cursor = connection.cursor()
    cursor.execute('SELECT value FROM ItemTable where key="planning"')
    data = cursor.fetchone()
-   # import ipdb
-   # ipdb.set_trace()
    planning_string = unicode(data[0], 'utf-16', errors='ignore')
    cursor.close()
    soup = BeautifulSoup(open("../planning.html"))
