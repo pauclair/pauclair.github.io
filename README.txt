@@ -5,6 +5,10 @@
  Created by Pierre AUCLAIR on 2014-02-08.
  Copyright 2014 Pierre AUCLAIR. All rights reserved.
 
+Start your local system
+bundle exec jekyll serve --watch
+
+
 start schedule.html on your local system (SAFARI)
 update the schedule
 save
