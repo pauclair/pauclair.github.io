@@ -12,6 +12,7 @@
 import sys
 import sqlite3 as lite
 import codecs
+from datetime import date
 
 from BeautifulSoup import BeautifulSoup, Tag
 
@@ -29,6 +30,8 @@ try:
    planning.clear()
    new_soup = BeautifulSoup(planning_string)
    planning.append(new_soup)
+   maj = new_soup.find(id='maj')
+   maj.string = "Dernière mise à jour le %s" %date.today().strftime("%d-%m-%Y") 
    file = codecs.open("../planning.html", 'w').write(str(soup.prettify()))
 
 except lite.Error, e:
