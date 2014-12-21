@@ -19,7 +19,7 @@ from BeautifulSoup import BeautifulSoup, Tag
 # Change year and adapt timetable periods
 # period format is mm/dd
 
-year = 2014
+year = 2015
 
 class period(object):
     """docstring for period"""
@@ -43,23 +43,20 @@ class timetable(object):
     def __init__(self):
         super(timetable, self).__init__()
         self.periodArray = [
-            period('01/01', '01/03', "green",),
-            period('01/04', '04/11', "blue"),
-            period('04/12', '04/18', "green"),
-            period('04/19', '05/09', "yellow"),
-            period('05/10', '05/23', "green"),
-            period('05/24', '05/30', "yellow"),
-            period('05/31', '06/06', "green"),
-            period('06/07', '07/04', "yellow"),
-            period('07/05', '07/11', "orange"),
-            period('07/12', '08/22', "red"),
-            period('08/23', '08/29', "orange"),
-            period('08/30', '09/12', "yellow"),
-            period('09/13', '09/26', "green"),
-            period('09/27', '10/17', "blue"),
-            period('10/18', '10/31', "green"),
-            period('11/01', '12/19', "blue"),
-            period('12/20', '12/31', "green"),
+            period('01/01', '04/10', "blue",),
+            period('04/11', '04/17', "green"),
+            period('04/18', '05/08', "yellow"),
+            period('05/09', '06/05', "green"),
+            period('06/06', '07/03', "yellow"),
+            period('07/04', '07/10', "orange"),
+            period('07/11', '08/21', "red"),
+            period('08/22', '08/28', "orange"),
+            period('08/29', '09/04', "yellow"),
+            period('09/05', '09/25', "green"),
+            period('09/26', '10/16', "blue"),
+            period('10/17', '10/30', "green"),
+            period('10/31', '12/18', "blue"),
+            period('12/19', '12/21', "green"),
            ]
            
     def periodColor(self, year, month, day):
@@ -93,10 +90,6 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       """docstring for addCss"""
       if css == None:
          return
-      
-      import ipdb
-      ipdb.set_trace()
-      
       string = codecs.open(css, 'r', encoding='utf-8').read()
       return '%s' % string
      
@@ -162,7 +155,7 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       s = ''.join(self.formatday(d, wd, themonth) for (d, wd) in theweek)
       return '<tr>%s</tr>' % s
    
-   def formatyearpage(self, theyear, width=4, encoding=None, legend=None):
+   def formatyearpage(self, theyear, width=4, encoding=None, legend=None, script=None):
       """
       Return a formatted year as a complete HTML page.
       """
@@ -182,6 +175,7 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       a('<link rel="stylesheet" href="css/foundation.css" type="text/css">\n')
       a('<link rel="stylesheet" href="css/trouss.css">\n')
       a('<script src="js/vendor/custom.modernizr.js" type="text/javascript"></script>\n')
+         
       a('</head>\n')
       a('<body>\n')
       a('<div id="planning">\n')
@@ -190,9 +184,10 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       
       a('<div class="row">\n')
       a('  <div class="large-12 medium-12 small-12 columns">\n')
-      a('     <h1 class="text-center">Tarifs %d</h1>\n' %theyear)
+      a('     <h1 class="text-center">Planning %d</h1>\n' %theyear)
       a('  </div>\n')
       a('</div>\n')
+      
       if (legend != None):
          a(self.addLegend(legend))
 
@@ -205,19 +200,25 @@ class TroussCalendar(calendar.LocaleHTMLCalendar):
       a('  <div class="large-3 small-12 columns">\n')
       a('     <a href="./index.html" class="button postfix">Retour</a>\n')
       a('  </div>\n')
-      a('  <div class="large-3 small-12 columns">\n')
-      a('     <a href="#" class="button postfix">Planning</a>\n')
-      a('  </div>\n')
       a('</div>\n')
-      
+      if (script != None):
+         a(self.addJs(script)) 
+              
       a('</body>\n')
       a('</html>\n')
       return ''.join(v)
+    
 
 currentloc = locale.getlocale()
 locale.setlocale(locale.LC_ALL, 'fr_FR')
 myCal = TroussCalendar (calendar.SATURDAY, locale.getlocale())
 
-schedule = myCal.formatyearpage(year, 4, 'utf-8', "legend.html")
-codecs.open("../tarifs.html", 'w', encoding='utf-8').write(schedule)
+planning = myCal.formatyearpage(year, 4, 'utf-8', "legend.html")
+codecs.open("../planning.html", 'w', encoding='utf-8').write(planning)
+
+schedule = myCal.formatyearpage(year, 4, 'utf-8', "legend.html", "script.js")
+codecs.open("../schedule.html", 'w', encoding='utf-8').write(schedule)
+
 locale.setlocale(locale.LC_ALL, currentloc)
+
+
