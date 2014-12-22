@@ -18,7 +18,6 @@ from BeautifulSoup import BeautifulSoup, Tag
 
 # Change year and adapt timetable periods
 # period format is mm/dd
-
 year = 2015
 
 class period(object):
@@ -42,6 +41,8 @@ class timetable(object):
     """docstring for timetable"""
     def __init__(self):
         super(timetable, self).__init__()
+        
+        #month/day
         self.periodArray = [
             period('01/01', '04/10', "blue",),
             period('04/11', '04/17', "green"),
