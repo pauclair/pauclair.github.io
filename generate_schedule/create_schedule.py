@@ -19,7 +19,9 @@ from BeautifulSoup import BeautifulSoup, Tag
 connection = None
 
 try:
-   connection = lite.connect('/Users/pa/Library/Safari/LocalStorage/http_localhost_4000.localstorage')
+   # connection = lite.connect('/Users/pa/Library/Safari/LocalStorage/http_localhost_4000.localstorage')
+   connection = lite.connect('/Users/pa/Library/Safari/LocalStorage/file__0.localstorage')
+   
    cursor = connection.cursor()
    cursor.execute('SELECT value FROM ItemTable where key="planning"')
    data = cursor.fetchone()
