@@ -2,5 +2,5 @@ safe: true
 lsi: false
 pygments: true
 source: ./
-exclude: generate_schedule, schedule.html, README.txt
+exclude: README.txt, generate_schedule, schedule.html, 2015planning.html, 2015schedule.html
 
