@@ -18,7 +18,7 @@ from BeautifulSoup import BeautifulSoup, Tag
 
 # Change year and adapt timetable periods
 # period format is mm/dd
-year = 2016
+year = 2017
 
 class period(object):
     """docstring for period"""
@@ -45,20 +45,20 @@ class timetable(object):
         #month/day
         self.periodArray = [
             period('01/01', '01/01', "green"),
-            period('01/02', '04/01', "blue",),
-            period('04/02', '04/08', "green"),
-            period('04/09', '05/06', "yellow"),
-            period('05/07', '06/17', "green"),
-            period('06/18', '07/01', "yellow"),
-            period('07/02', '07/15', "orange"),
-            period('07/16', '08/19', "red"),
-            period('08/20', '08/26', "orange"),
-            period('08/27', '09/02', "yellow"),
-            period('09/03', '09/23', "green"),
-            period('09/24', '10/14', "blue"),
-            period('10/15', '10/28', "green"),
-            period('10/29', '12/16', "blue"),
-            period('12/17', '12/31', "green"),
+            period('01/02', '03/31', "blue",),
+            period('04/01', '04/07', "green"),
+            period('04/08', '04/28', "yellow"),
+            period('04/29', '06/16', "green"),
+            period('06/17', '06/30', "yellow"),
+            period('07/01', '07/14', "orange"),
+            period('07/15', '08/18', "red"),
+            period('08/19', '08/25', "orange"),
+            period('08/26', '09/01', "yellow"),
+            period('09/02', '09/22', "green"),
+            period('09/23', '10/13', "blue"),
+            period('10/14', '10/27', "green"),
+            period('10/28', '12/15', "blue"),
+            period('12/16', '12/31', "green"),
            ]
            
     def periodColor(self, year, month, day):
